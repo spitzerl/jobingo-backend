@@ -20,6 +20,11 @@ services:
       POSTGRES_USER: jobingo
       POSTGRES_PASSWORD: jobingo
       POSTGRES_DB: jobingo
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "admin"]
+      interval: 3s
+      timeout: 5s
+      retries: 5
     ports:
       - "5432:5432"
     volumes:
