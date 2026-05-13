@@ -38,3 +38,14 @@ Pour supprimer aussi les données locales (DB) :
 ```bash
 docker compose -f docker-compose.dev.yml down -v
 ```
+
+---
+
+## Publication Docker (GHCR)
+
+Une GitHub Action publie automatiquement l'image Docker sur GHCR à chaque release publiée.
+
+- Workflow : `.github/workflows/release-ghcr.yml`
+- Images publiées :
+  - `ghcr.io/<owner>/<repo>:<tag-de-release>`
+  - `ghcr.io/<owner>/<repo>:latest`
